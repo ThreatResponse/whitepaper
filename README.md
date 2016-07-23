@@ -38,9 +38,19 @@ In addition to disk and memory evidence, there are many AWS specific data points
 
 ## Automating IR with ThreatResponse Tools
 
+Nothing can make handling an incident more frustrating than not having a plan to follow. Without a plan, responders may accidentally delete or fail to collect important evidence and inadequately remove access from the attacker. This could lead the responder to fail to understand what happened, and therefore prevent the attacker from getting back in.
+
+Having an incident response plan can greatly reduce the stress of responding to an incident. Responders can walk through the plan and know they are doing the right thing. However, following the plan still introduces the risk of human error, as a responder may skip a step or perform sensitive data acquisitions out of order.
+
+By automating the collection of evidence and compromise mitigations, organizations can be fully prepared should a compromise occur. To help organizations with this automation, we are releasing four distinct tools.
+
 ### AWS-IR: Automatic Evidence Collection and Mitigation
 
+AWS-IR is a python module and standalone command line tool that can be used to collect evidence and mitigate compromises. The command line tool has three subcommands: `host_compromise`, `key_compromise` and `create_workstation`. When using the compromise commands, evidence is collected and the compromised assets are mitigated. Collected evidence is stored in an AWS S3 bucket tagged with a case number. Responders can then load that evidence into the ThreatResponse-Web incident response workstation for further analysis by using the `create_workstation` subcommand. Additionally, by specifying the `-c` flag, with either compromise subcommand, a workstation will automatically be created for the responder.
+
 ### ThreatResponse-Web: An Incident Response Workstation for AWS
+
+### Margarita Shotgun: Capturing Memory from AWS Instances
 
 ### ThreatPrep: Preparing your environment for optimal evidence collection.
 
