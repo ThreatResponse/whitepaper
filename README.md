@@ -44,6 +44,24 @@ In addition to disk and memory evidence, there are many AWS specific data points
 
 ### ThreatPrep: Preparing your environment for optimal evidence collection.
 
+ThreatPrep is a tool to examine an AWS environment with two main objectives. Firstly, identify areas where the security posture could be increased and secondly, identify areas where the amount of forensic evidence could be increased.
+
+The following items are currently checked by ThreatPrep:
+
+ - S3 Buckets have versioning and logging enabled, and do not allow public reading or writing.
+ - IAM users have MFA enabled, credentials have recently been rotated, and users are not attached to the AdministratorAccess policy.
+ - VPCs have flow logs enabled.
+ - Billing alerts are enabled.
+ - Multi-regional CloudTrail is enabled.
+
+ThreatPrep can be used either from a command line, or used in a python project. In fact, the ThreatResponse-Web project includes output from ThreatPrep in the advise section.
+
+ThreatPrep offers similar advice as AWS Trusted Advisor. Trusted Advisor is a service that checks for both security and performance improvements that could be made in an AWS environment. Trusted Advisor is currently only available in the console and can not be accessed programatically. Trusted Advisor is provided through the support plan of an account. AWS Trusted Advisor provides a few checks for accounts with the basic support plan, but the full set of checks is only available to Business or Enterprise support plans.
+
+ThreatPrep also shares similarities to AWS Config and Config Rules. Config deals with logging configuration details, called  a *configuration item* for supported AWS resources whenever that resource is created, deleted, or changed. AWS Config rules is a distinct offering from Config. Config Rules is responsible for evaluating the configuration item against a set of predefined criteria and then alerting AWS users if that criteria is not met. AWS provides a set of configurable rules users may use, as well as the ability to make custom rules. Many of the predefined rules cover similar areas as Trusted Advisor. The price to store a configuration item is about a third of a cent so the cost of enabling AWS Config is unlikely to cause significant price increases. AWS Config Rules cost two dollars per month per rule, and possibly more depending on how many times the rule is evaluated.
+
+
+
 
 
 ## References and Prior Work
