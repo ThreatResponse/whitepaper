@@ -10,7 +10,7 @@ In this paper, we detail the evidence an incident responder should collect and t
 
 **Alex McCormack** is a Principal Software Developer at a large cyber security company. Alex assists in the design and implementation of capture the flag (CTF) competitions and training events. Alex has designed CTF challenges since 2013 and given training since 2012. Prior to developing CTFs, Alex worked in Incident Response and Malware Analysis.
 
-TODO: expand Joel's and Jeff's bios
+TODO: expand Jeff's bios
 
 **Joel Ferrier** is the creator of Margarita Shotgun.  Joel currently works as a Systems Administrator.  Previously Joel worked as a Systems Engineer with a focus in Security Operations.
 
@@ -49,7 +49,13 @@ By automating the collection of evidence and compromise mitigations, organizatio
 
 ### Margarita Shotgun: Capturing Memory from AWS Instances
 
-Margarita Shotgun is a python module and a standalone command line tool that automates the process of aquiring memory from remote systems, both on premise and in Amazon Web Services.  Margarita Shotgun makes use of the [LiME Project][LiME] to capture memory, accessing a configurable repository of prebuilt LiME kernel modules.  After determining the remote system's kernel version and architecture the LiME kernel module is loaded and system memory is streamed over an ssh tunnel to the incident responder's workstation.  Memory can be saved to disk or streamed directly to an s3 bucket.  Python's multiprocessing library is used to process multiple systems in parallel.
+Margarita Shotgun is a python module and a standalone command line tool that automates the process of aquiring memory from remote systems, both on premise and in Amazon Web Services.  Margarita Shotgun makes heavy use of [paramiko][paramiko] to securely connect to remote systems and secure memory in transit between the comprimised server and the incident responder workstation.
+
+Margarita Shotgun makes use of the [LiME Project][LiME] to capture memory. A configurable repository of prebuilt LiME kernel modules is availible to streamline the memory aquisition process.
+
+After determining the remote system's kernel version and architecture the appropriate LiME kernel module is loaded and system memory is streamed over an ssh tunnel to the incident responder's workstation.  Memory can be saved to disk or streamed directly to an s3 bucket.
+
+Memory aquisitions are preformed in parallel with the help of Python's multiprocessing library, decreasing the period that compromised instances must be left running.
 
 ### AWS-IR: Automatic Evidence Collection and Mitigation
 
@@ -113,6 +119,7 @@ The ThreatResponse team encourages anyone interested in developing, contributing
  - [TimeSketch][timesketch]
  - [boto3][boto3]
  - [Installing the AWS SDK][aws_sdk_install]
+ - [paramiko][paramiko]
  - [LiME][LiME]
 
 [blyx]: http://blyx.com/2016/03/11/forensics-in-aws-an-introduction/
@@ -124,3 +131,4 @@ The ThreatResponse team encourages anyone interested in developing, contributing
 [boto3]: http://boto3.readthedocs.io/en/latest/
 [aws_sdk_install]: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
 [LiME]: https://github.com/504ensicsLabs/LiME
+[paramiko]: https://github.com/paramiko/paramiko
