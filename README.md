@@ -12,7 +12,7 @@ In this paper, we detail the evidence an incident responder should collect and t
 
 TODO: expand Joel's and Jeff's bios
 
-**Joel Ferrier** is the creator of Margarita Shotgun
+**Joel Ferrier** is the creator of Margarita Shotgun.  Joel currently works as a Systems Administrator.  Previously Joel worked as a Systems Engineer with a focus in Security Operations.
 
 **Jeff Parr** is a Front End Guru
 
@@ -52,6 +52,8 @@ AWS-IR is a python module and standalone command line tool that can be used to c
 
 ### Margarita Shotgun: Capturing Memory from AWS Instances
 
+Margarita Shotgun is a python module and a standalone command line tool that automates the process of aquiring memory from remote systems, both on premise and in Amazon Web Services.  Margarita Shotgun makes use of the [LiME Project][LiME] to capture memory, accessing a configurable repository of prebuilt LiME kernel modules.  After determining the remote system's kernel version and architecture the LiME kernel module is loaded and system memory is streamed over an ssh tunnel to the incident responder's workstation.  Memory can be saved to disk or streamed directly to an s3 bucket.  Python's multiprocessing library is used to process multiple systems in parallel.
+
 ### ThreatPrep: Preparing your environment for optimal evidence collection.
 
 ThreatPrep is a tool to examine an AWS environment with two main objectives. Firstly, identify areas where the security posture could be increased and secondly, identify areas where the amount of forensic evidence could be increased.
@@ -80,3 +82,4 @@ ThreatPrep also shares similarities to AWS Config and Config Rules. Config deals
 
 
 [blyx]: http://blyx.com/2016/03/11/forensics-in-aws-an-introduction/
+[LiME]: https://github.com/504ensicsLabs/LiME
