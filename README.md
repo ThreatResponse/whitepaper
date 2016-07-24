@@ -10,13 +10,9 @@ In this paper, we detail the evidence an incident responder should collect and t
 
 **Alex McCormack** is a Principal Software Developer at a large cyber security company. Alex assists in the design and implementation of capture the flag (CTF) competitions and training events. Alex has designed CTF challenges since 2013 and given training since 2012. Prior to developing CTFs, Alex worked in Incident Response and Malware Analysis.
 
-TODO: expand Jeff's bios
-
 **Joel Ferrier** is the creator of Margarita Shotgun.  Joel currently works as a Systems Administrator.  Previously Joel worked as a Systems Engineer with a focus in Security Operations.
 
-**Jeff Parr** is a Front End Guru
-
-
+**Jeff Parr** is the Frontend Guru for the project.  He has been developing web technologies for over 15 years; primarily Rails for the last 5. Parr claims, "I love seeing people use what I build."  Parr has been a subcontractor through engineering/design firms, innovation consultant, and more; specializing in pairing, reviewing code, and contributing to open source.
 
 ## Incident Response in AWS
 
