@@ -1,3 +1,11 @@
+---
+output:
+  pdf_document:
+    pandoc_args: [
+      "-V", "classoption=twocolumn"
+    ]
+---
+
 # Hardening AWS Environments and Automating Incident Response for AWS Compromises
 
 ## Abstract
